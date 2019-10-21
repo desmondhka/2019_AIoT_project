@@ -10,6 +10,6 @@ $(document).ready(function() {
   $( "#datepicker" ).datepicker( {
   	dateFormat: "yy-mm-dd",
   	maxDate: new Date( 2019, 8, 29, 8, 15 ),
-  	minDate: new Date( 2019, 2, 22, 8, 15 ),
+  	minDate: new Date( 2019, 2, 20, 8, 15 ),
   });
 });
