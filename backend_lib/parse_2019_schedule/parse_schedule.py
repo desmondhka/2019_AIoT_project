@@ -49,7 +49,7 @@ with con.cursor() as cursor:
             scores[0] = int(re.findall(r'\d+', scores[0])[0])
             scores[1] = int(re.findall(r'\d+', scores[1])[0])
             
-            sql = "INSERT INTO reg_season_schedule_2019 \
+            sql = "INSERT INTO season_games_2019 \
                     (date, away, home, scores_away, scores_home) \
                     VALUES (%s, %s, %s, %s, %s)"
             cursor.execute(sql, (date, away, home, scores[0], scores[1]))

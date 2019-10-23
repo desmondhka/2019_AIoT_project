@@ -7,7 +7,17 @@
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
 
-class RegSeasonSchedule2019(models.Model):
+class GamePredictions2019(models.Model):
+    predic_id = models.AutoField(primary_key=True)
+    predic_scores_away = models.IntegerField()
+    predic_scores_home = models.IntegerField()
+    game = models.ForeignKey('SeasonGames2019', models.DO_NOTHING)
+
+    class Meta:
+        db_table = 'game_predictions_2019'
+
+class SeasonGames2019(models.Model):
+    id = models.AutoField(primary_key=True)
     date = models.DateField()
     away = models.CharField(max_length=30)
     home = models.CharField(max_length=30)
@@ -15,4 +25,4 @@ class RegSeasonSchedule2019(models.Model):
     scores_home = models.IntegerField()
 
     class Meta:
-        db_table = 'reg_season_schedule_2019'
+        db_table = 'season_games_2019'

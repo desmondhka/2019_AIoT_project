@@ -1,0 +1,354 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>PROJECT TITLE</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
+  <!-- Page level plugin CSS-->
+  <link href="{% static 'vendor/datatables/dataTables.bootstrap4.css' %}" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="{% static 'css/sb-admin.css' %}" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+
+    <a class="navbar-brand mr-1" href="">PROJECT TITLE</a>
+
+    <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Navbar Search -->
+    <!--
+    <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="button">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+    -->
+    <!-- Navbar -->
+    <!--
+    <ul class="navbar-nav ml-auto ml-md-0">
+      <li class="nav-item dropdown no-arrow mx-1">
+        <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-bell fa-fw"></i>
+          <span class="badge badge-danger">9+</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown no-arrow mx-1">
+        <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-envelope fa-fw"></i>
+          <span class="badge badge-danger">7</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown no-arrow">
+        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-user-circle fa-fw"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+          <a class="dropdown-item" href="#">Settings</a>
+          <a class="dropdown-item" href="#">Activity Log</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+        </div>
+      </li>
+    </ul>
+    -->
+  </nav>
+
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="sidebar navbar-nav">
+      <!--
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      -->
+      <!--
+      <li class="nav-item active">
+        <a class="nav-link" href="charts.html">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Charts</span></a>
+      </li>
+      -->
+     <li class="nav-item">
+        <a class="nav-link" href="/schedule/">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Schedule</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Teams</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+          <h6 class="dropdown-header">AL EAST</h6>
+          <a class="dropdown-item" href="/teams/BAL/">
+            <img src="{% static 'imgs/BAL.png' %}" width="25" height="25"> Baltimore Orioles
+          </a>
+          <a class="dropdown-item" href="/teams/BOS/">
+            <img src="{% static 'imgs/BOS.png' %}" width="25" height="25"> Boston Red Sox
+          </a>
+          <a class="dropdown-item" href="/teams/NYY/">
+            <img src="{% static 'imgs/NYY.png' %}" width="25" height="25"> New York Yankees
+          </a>
+          <a class="dropdown-item" href="/teams/TB/">
+            <img src="{% static 'imgs/TB.png' %}" width="25" height="25"> Tampa Bay Rays
+          </a>
+          <a class="dropdown-item" href="/teams/TOR/">
+            <img src="{% static 'imgs/TOR.png' %}" width="25" height="25"> Toronto Blue Jays
+          </a>
+          <div class="dropdown-divider"></div>
+          <h6 class="dropdown-header">AL CENTRAL</h6>
+          <a class="dropdown-item" href="/teams/CWS/">
+            <img src="{% static 'imgs/CWS.png' %}" width="25" height="25"> Chicago White Sox
+          </a>
+          <a class="dropdown-item" href="/teams/CLE/">
+            <img src="{% static 'imgs/CLE.png' %}" width="25" height="25"> Cleveland Indians
+          </a>
+          <a class="dropdown-item" href="/teams/DET/">
+            <img src="{% static 'imgs/DET.png' %}" width="25" height="25"> Detroit Tigers
+          </a>
+          <a class="dropdown-item" href="/teams/KC/">
+            <img src="{% static 'imgs/KC.png' %}" width="25" height="25"> Kansas City Royals
+          </a>
+          <a class="dropdown-item" href="/teams/MIN/">
+            <img src="{% static 'imgs/MIN.png' %}" width="25" height="25"> Minnesota Twins
+          </a>
+          <div class="dropdown-divider"></div>
+          <h6 class="dropdown-header">AL WEST</h6>
+          <a class="dropdown-item" href="/teams/HOU/">
+            <img src="{% static 'imgs/HOU.png' %}" width="25" height="25"> Houston Astros
+          </a>
+          <a class="dropdown-item" href="/teams/LAA/">
+            <img src="{% static 'imgs/LAA.png' %}" width="25" height="25"> Los Angeles Angels
+          </a>
+          <a class="dropdown-item" href="/teams/OAK/">
+            <img src="{% static 'imgs/OAK.png' %}" width="25" height="25"> Oakland Athletics
+          </a>
+          <a class="dropdown-item" href="/teams/SEA/">
+            <img src="{% static 'imgs/SEA.png' %}" width="25" height="25"> Seattle Mariners
+          </a>
+          <a class="dropdown-item" href="/teams/TEX/">
+            <img src="{% static 'imgs/TEX.png' %}" width="25" height="25"> Texas Rangers
+          </a>
+          <div class="dropdown-divider"></div>
+          <h6 class="dropdown-header">NL EAST</h6>
+          <a class="dropdown-item" href="/teams/ATL/">
+            <img src="{% static 'imgs/ATL.png' %}" width="25" height="25"> Atlanta Braves
+          </a>
+          <a class="dropdown-item" href="/teams/MIA/">
+            <img src="{% static 'imgs/MIA.png' %}" width="25" height="25"> Miami Marlins
+          </a>
+          <a class="dropdown-item" href="/teams/NYM/">
+            <img src="{% static 'imgs/NYM.png' %}" width="25" height="25"> New York Mets
+          </a>
+          <a class="dropdown-item" href="/teams/PHI/">
+            <img src="{% static 'imgs/PHI.png' %}" width="25" height="25"> Philadelphia Phillies
+          </a>
+          <a class="dropdown-item" href="/teams/WSH/">
+            <img src="{% static 'imgs/WSH.png' %}" width="25" height="25"> Washington Nationals
+          </a>
+          <div class="dropdown-divider"></div>
+          <h6 class="dropdown-header">NL CENTRAL</h6>
+          <a class="dropdown-item" href="/teams/CHC/">
+            <img src="{% static 'imgs/CHC.png' %}" width="25" height="25"> Chicago Cubs
+          </a>
+          <a class="dropdown-item" href="/teams/CIN/">
+            <img src="{% static 'imgs/CIN.png' %}" width="25" height="25"> Cincinnati Reds
+          </a>
+          <a class="dropdown-item" href="/teams/MIL/">
+            <img src="{% static 'imgs/MIL.png' %}" width="25" height="25"> Milwaukee Brewers
+          </a>
+          <a class="dropdown-item" href="/teams/PIT/">
+            <img src="{% static 'imgs/PIT.png' %}" width="25" height="25"> Pittsburgh Pirates
+          </a>
+          <a class="dropdown-item" href="/teams/STL/">
+            <img src="{% static 'imgs/STL.png' %}" width="25" height="25"> St. Louis Cardinals
+          </a>
+          <div class="dropdown-divider"></div>
+          <h6 class="dropdown-header">NL WEST</h6>
+          <a class="dropdown-item" href="/teams/ARI/">
+            <img src="{% static 'imgs/ARI.png' %}" width="25" height="25"> Arizona D'Backs
+          </a>
+          <a class="dropdown-item" href="/teams/COL/">
+            <img src="{% static 'imgs/COL.png' %}" width="25" height="25"> Colorado Rockies
+          </a>
+          <a class="dropdown-item" href="/teams/LAD/">
+            <img src="{% static 'imgs/LAD.png' %}" width="25" height="25"> Los Angeles Dodgers
+          </a>
+          <a class="dropdown-item" href="/teams/SD/">
+            <img src="{% static 'imgs/SD.png' %}" width="25" height="25"> San Diego Padres
+          </a>
+          <a class="dropdown-item" href="/teams/SF/">
+            <img src="{% static 'imgs/SF.png' %}" width="25" height="25"> San Francisco Giants
+          </a>
+        </div>
+      </li>
+    </ul>
+
+    <div id="content-wrapper">
+
+      <div class="container-fluid">
+
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="#">Teams</a>
+          </li>
+          <li class="breadcrumb-item active">{{teamName}}</li>
+        </ol>
+
+        <!-- Area Chart Example-->
+        <div class="card mb-3">
+          <div class="card-header">
+            <i class="fas fa-chart-area"></i>
+            Real Runs and Predictions </div>
+          <div class="card-body">
+            <canvas id="myAreaChart" width="100%" height="30"></canvas>
+          </div>
+          <div class="card-footer small text-muted">TODO: some footer here</div>
+        </div>
+
+        <div class="row">
+          <!-- Area Chart Example-->
+          <!--
+          <div class="col-lg-8">
+            <div class="card mb-3">
+              <div class="card-header">
+                <i class="fas fa-chart-bar"></i>
+                Bar Chart Example</div>
+              <div class="card-body">
+                <canvas id="myBarChart" width="100%" height="50"></canvas>
+              </div>
+              <div class="card-footer small text-muted">TODO: some footer here</div>
+            </div>
+          </div>
+          -->
+          <div class="col-lg-4">
+            <div class="card mb-3">
+              <div class="card-header">
+                <i class="fas fa-chart-pie"></i>
+                Predict Deviation</div>
+              <div class="card-body">
+                <canvas id="myPieChart" width="100%" height="100"></canvas>
+              </div>
+              <div class="card-footer small text-muted">TODO: some footer here</div>
+            </div>
+          </div>
+        </div>
+
+        <!--
+        <p class="small text-center text-muted my-5">
+          <em>More chart examples coming soon...</em>
+        </p>
+        -->
+
+      </div>
+      <!-- /.container-fluid -->
+
+      <!-- Sticky Footer -->
+      <footer class="sticky-footer">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright © PROJECT NAME 2019</span>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+    <!-- /.content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+  <!--
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="login.html">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  -->
+
+  <script>
+    var deltas = {{ deltas }};
+    var dateList = {{ dateList|safe }};
+    var realScoreList = {{ realScoreList }};
+    var predictScoreList = {{ predictScoreList }};
+  </script>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+  <!-- Page level plugin JavaScript-->
+  <script src="{% static 'vendor/chart.js/Chart.min.js' %}"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="{% static 'js/sb-admin.min.js' %}"></script>
+
+  <!-- Demo scripts for this page-->
+  <script src="{% static 'js/demo/chart-area-demo.js' %}"></script>
+  <!-- <script src="{% static 'js/demo/chart-bar-demo.js' %}"></script> -->
+  <script src="{% static 'js/demo/chart-pie-demo.js' %}"></script>
+
+</body>
+
+</html>
