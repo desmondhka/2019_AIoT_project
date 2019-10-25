@@ -13,4 +13,4 @@
 
 3. python manage.py runserver
 
-4. Home URL: 127.0.0.1:8000
+4. Home URL: 127.0.0.1:8000/schedule
