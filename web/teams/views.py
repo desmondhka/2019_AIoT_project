@@ -94,4 +94,5 @@ def showchart(request, team):
 			 'deltas': deltas,
 			 'dateList': dateList,
 			 'realScoreList': realScoreList,
-			 'predictScoreList': predictScoreList})
+			 'predictScoreList': predictScoreList,
+			 'gameRecords': gameRecords})

@@ -274,6 +274,79 @@
           </div>
         </div>
 
+        <div class="card mb-3">
+          <div class="card-header">
+            <i class="fas fa-table"></i>
+            Schedule</div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>opponent</th>
+                    <th>Result</th>
+                    <th>Prediction</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for r in gameRecords %}
+                    <tr>
+                      <td>{{r.date}}</td>
+                      {% if r.away == teamName %}
+                        <td>@ {{r.home}}</td>
+                        <td>
+                        {% if r.scores_away > r.scores_home %}
+                          W
+                        {% elif r.scores_away < r.scores_home %}
+                          L
+                        {% else %}
+                          T
+                        {% endif %}
+                          , {{r.scores_away}} : {{r.scores_home}}
+                        </td>
+
+                        <td>
+                        {% if r.gamepredictions2019_set.get.predic_scores_away > r.gamepredictions2019_set.get.predic_scores_home %}
+                          W
+                        {% elif r.gamepredictions2019_set.get.predic_scores_away < r.gamepredictions2019_set.get.predic_scores_home %}
+                          L
+                        {% else %}
+                          T
+                        {% endif %}
+                          , {{r.gamepredictions2019_set.get.predic_scores_away}} : {{r.gamepredictions2019_set.get.predic_scores_home}}</td>
+                      {% elif r.home == teamName %}
+                        <td>V.S {{r.away}}</td>
+                        <td>
+                        {% if r.scores_away > r.scores_home %}
+                          L
+                        {% elif r.scores_away < r.scores_home %}
+                          W
+                        {% else %}
+                          T
+                        {% endif %}
+                          , {{r.scores_home}} : {{r.scores_away}}
+                        </td>
+
+                        <td>
+                        {% if r.gamepredictions2019_set.get.predic_scores_away > r.gamepredictions2019_set.get.predic_scores_home %}
+                          L
+                        {% elif r.gamepredictions2019_set.get.predic_scores_away < r.gamepredictions2019_set.get.predic_scores_home %}
+                          W
+                        {% else %}
+                          T
+                        {% endif %}
+                          , {{r.gamepredictions2019_set.get.predic_scores_home}} : {{r.gamepredictions2019_set.get.predic_scores_away}}</td>
+                      {% endif %}
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card-footer small text-muted">TODO: Footer string</div>
+        </div>
+
         <!--
         <p class="small text-center text-muted my-5">
           <em>More chart examples coming soon...</em>
@@ -340,6 +413,8 @@
 
   <!-- Page level plugin JavaScript-->
   <script src="{% static 'vendor/chart.js/Chart.min.js' %}"></script>
+  <script src="{% static 'vendor/datatables/jquery.dataTables.js' %}"></script>
+  <script src="{% static 'vendor/datatables/dataTables.bootstrap4.js' %}"></script>
 
   <!-- Custom scripts for all pages-->
   <script src="{% static 'js/sb-admin.min.js' %}"></script>
@@ -348,6 +423,7 @@
   <script src="{% static 'js/demo/chart-area-demo.js' %}"></script>
   <!-- <script src="{% static 'js/demo/chart-bar-demo.js' %}"></script> -->
   <script src="{% static 'js/demo/chart-pie-demo.js' %}"></script>
+  <script src="{% static 'js/demo/datatables-teams.js' %}"></script>
 
 </body>
 

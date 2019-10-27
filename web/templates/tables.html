@@ -249,7 +249,7 @@
           <div class="card-body">
             <input id="datepicker" width="280" value="{{date}}" onchange="getDataOfDay(this.value)">
             <div class="table-responsive">
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <table class="table table-bordered table-striped" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
                     <th>Away</th>
@@ -331,14 +331,14 @@
   <!-- Core plugin JavaScript-->
   <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
 
+  <!-- Page level plugin JavaScript-->
+  <script src="{% static 'vendor/datatables/jquery.dataTables.js' %}"></script>
+  <script src="{% static 'vendor/datatables/dataTables.bootstrap4.js' %}"></script>
+
   <!--Add for Datepicker-->
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <!--<script src="{% static 'vendor/datepicker/js/bootstrap-datepicker.min.js' %}"></script>
   <script src="{% static 'vendor/datepicker/locales/bootstrap-datepicker.zh-TW.min.js' %}" charset="UTF-8"></script>-->
-
-  <!-- Page level plugin JavaScript-->
-  <script src="{% static 'vendor/datatables/jquery.dataTables.js' %}"></script>
-  <script src="{% static 'vendor/datatables/dataTables.bootstrap4.js' %}"></script>
 
   <!-- Custom scripts for all pages-->
   <script src="{% static 'js/sb-admin.min.js' %}"></script>
