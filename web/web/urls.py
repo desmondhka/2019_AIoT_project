@@ -21,4 +21,5 @@ urlpatterns = [
     #path('', include('schedule.urls')), #TO-DO: change to real homepage app
     path('schedule/', include('schedule.urls')),
     path('teams/', include('teams.urls')),
+    path('winrate/', include('winrate.urls')),
 ]

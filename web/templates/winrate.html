@@ -259,17 +259,19 @@
                   <tr>
                     <th>Away</th>
                     <th>Home</th>
-                    <th>Result</th>
-                    <th>Prediction</th>
+                    <th>Win</th>
+                    <th>Pred. Win</th>
+                    <th>Probability</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {% for r in results %}
+                  {% for at, ht, wt, pwt, pb in results %}
                     <tr>
-                      <td>{{r.away}}</td>
-                      <td>{{r.home}}</td>
-                      <td>{{r.scores_away}} : {{r.scores_home}}</td>
-                      <td>{{r.gamepredictions2019_set.get.predic_scores_away}} : {{r.gamepredictions2019_set.get.predic_scores_home}}</td>
+                      <td>{{at}}</td>
+                      <td>{{ht}}</td>
+                      <td>{{wt}}</td>
+                      <td>{{pwt}}</td>
+                      <td>{{pb}}</td>
                     </tr>
                   {% endfor %}
                 </tbody>
@@ -349,7 +351,7 @@
   <script src="{% static 'js/sb-admin.min.js' %}"></script>
 
   <!-- Demo scripts for this page-->
-  <script src="{% static 'js/demo/datatables-demo.js' %}"></script>
+  <script src="{% static 'js/demo/datatables-winrate.js' %}"></script>
 
 </body>
 
