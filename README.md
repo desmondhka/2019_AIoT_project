@@ -1,4 +1,5 @@
 # 2019_AIoT_project
+![image](https://github.com/desmondhka/2019_AIoT_project/blob/master/%E6%9E%B6%E6%A7%8B.png)
 
 ## SOP:
 1. set up MySql:
