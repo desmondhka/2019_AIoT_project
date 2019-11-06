@@ -13,6 +13,7 @@ def teamNameMapping(x):
 		"BOS": "Boston Red Sox",
 		"CHC": "Chicago Cubs",
 		"CWS": "Chicago White Sox",
+		"CHW": "Chicago White Sox",
 		"CIN": "Cincinnati Reds",
 		"CLE": "Cleveland Indians",
 		"COL": "Colorado Rockies",
@@ -40,7 +41,8 @@ def teamNameMapping(x):
 		"TBR": "Tampa Bay Rays",
 		"TEX": "Texas Rangers",
 		"TOR": "Toronto Blue Jays",
-		"WSH": "Washington Nationals"
+		"WSH": "Washington Nationals",
+		"WSN": "Washington Nationals"
 	}.get(x, None)
 
 # Create your views here.
